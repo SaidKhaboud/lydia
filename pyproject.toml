@@ -1,0 +1,20 @@
+[project]
+name = "crypto-elt-project"
+version = "0.1.0"
+description = "An ELT pipeline for cryptocurrency data using Airbyte, dbt, and Prefect."
+authors = [
+  { name="Your Name", email="your.email@example.com" },
+]
+requires-python = ">=3.10"
+dependencies = [
+    "airbyte==0.29.0",
+    "duckdb>=0.10.2",
+    "dbt-duckdb>=1.7.1",
+    "prefect>=2.19.4",
+    "pandas>=2.2.2",
+    "matplotlib>=3.9.0",
+    "airbyte-cdk==6.60.4",
+]
+
+[tool.setuptools]
+packages = ["my_pipeline"]

@@ -3,13 +3,13 @@ my_crypto_pipeline:
   outputs:
     dev:
       type: duckdb
-      path: /Users/saidkhaboud/Desktop/lydia/db_crypto_data.duckdb
+      path: /opt/airflow/db/db_crypto_data.duckdb
       schema: main
       threads: 4
       keepalives_idle: 0
     prod:
       type: duckdb
-      path: /Users/saidkhaboud/Desktop/lydia/db_crypto_data.duckdb
+      path: /opt/airflow/db/db_crypto_data.duckdb
       schema: main
       threads: 4
       keepalives_idle: 0

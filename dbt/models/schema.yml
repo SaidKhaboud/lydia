@@ -23,13 +23,19 @@ models:
         tests:
           - unique
           - not_null
-      - name: open_price
+      - name: opening_price
         description: "Opening price of the day (USD)"
-      - name: high_price  
+        tests:
+          - not_null
+      - name: maximum_price
         description: "Highest price of the day (USD)"
-      - name: low_price
+        tests:
+          - not_null
+      - name: minimum_price
         description: "Lowest price of the day (USD)"
-      - name: close_price
+        tests:
+          - not_null
+      - name: closing_price
         description: "Closing price of the day (USD)"
         tests:
           - not_null

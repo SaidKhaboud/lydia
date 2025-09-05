@@ -1,3 +1,13 @@
+{{
+    config(
+        materialized = 'incremental',
+        unique_key = 'date',
+        options={
+            'partition_by':'day'
+        }
+    )
+}}
+
 -- Daily OHLC candlestick data derived from CoinGecko market chart data
 WITH price_data AS (
   SELECT 
@@ -29,10 +39,10 @@ daily_prices AS (
 -- Calculate OHLC for each day
 SELECT 
   date,
-  MAX(CASE WHEN rn_asc = 1 THEN price END) AS open_price,
-  MAX(price) AS high_price,
-  MIN(price) AS low_price,
-  MAX(CASE WHEN rn_desc = 1 THEN price END) AS close_price
+  MAX(CASE WHEN rn_asc = 1 THEN price END) AS opening_price,
+  MAX(price) AS maximum_price,
+  MIN(price) AS minimum_price,
+  MAX(CASE WHEN rn_desc = 1 THEN price END) AS closing_price
 FROM daily_prices
 GROUP BY date
 ORDER BY date

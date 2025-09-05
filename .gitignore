@@ -38,9 +38,9 @@ MANIFEST
 *.duckdb
 
 # dbt specific
-my_crypto_pipeline/target/
-my_crypto_pipeline/dbt_packages/
-my_crypto_pipeline/logs/
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
 
 # Logs
 *.log
@@ -77,8 +77,3 @@ Thumbs.db
 airbyte_local/
 .airbyte/
 
-# Coverage reports
-.coverage
-.coverage.*
-coverage.xml
-.pytest_cache/

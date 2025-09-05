@@ -11,10 +11,9 @@ def generate_visualization():
     """
     print("Generating candlestick visualization...")
     try:
-        # Use the same database path as specified in the dbt profiles.yml
-        db_path = '/Users/saidkhaboud/Desktop/lydia/db_crypto_data.duckdb'
+        db_path = '/opt/airflow/db/db_crypto_data.duckdb'
         con = duckdb.connect(database=db_path, read_only=True)
-        df = con.execute("SELECT date, open_price, high_price, low_price, close_price FROM daily_candlestick ORDER BY date").fetchdf()
+        df = con.execute("SELECT date, opening_price, maximum_price, minimum_price, closing_price FROM daily_candlestick ORDER BY date").fetchdf()
         con.close()
 
         if df.empty:
@@ -29,11 +28,11 @@ def generate_visualization():
         # Create candlestick chart
         for i, row in df.iterrows():
             date = row['date']
-            open_price = row['open_price']
-            high_price = row['high_price']
-            low_price = row['low_price']
-            close_price = row['close_price']
-            
+            open_price = row['opening_price']
+            high_price = row['maximum_price']
+            low_price = row['minimum_price']
+            close_price = row['closing_price']
+
             # Determine color: green if close > open, red if close < open
             color = 'green' if close_price >= open_price else 'red'
             
@@ -72,7 +71,7 @@ def generate_visualization():
         
         plt.tight_layout()
 
-        output_path = 'bitcoin_candlestick_chart.png'
+        output_path = '/opt/airflow/fig/bitcoin_candlestick_chart.png'
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
         print(f"Candlestick chart saved successfully to {output_path}")
 

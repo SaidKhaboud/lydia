@@ -67,11 +67,11 @@ This task reads the data from `daily_candlestick` table and plots a candlestick 
 ### 3. Data Quality & Monitoring
 - Enhanced dbt tests with oackages like `dbt_expectations` for data validation
 - Data freshness monitoring and alerting
-- Add data profiling and anomaly detection
+- Add data profiling and anomaly detection using tools like `dbt_expectations`n `dbt macro` and python's `GX`
 
 ### 4. Error Handling & Logging
 - Structured logging with consistent format across all components, instead of just prints
-- Centralized error tracking and alerting
+- Centralized logging, error tracking and alerting
 - Use a comprehensive performance monitoring stack
 
 ### 8. Security

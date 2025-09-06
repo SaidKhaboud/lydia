@@ -60,21 +60,28 @@ This task reads the data from `daily_candlestick` table and plots a candlestick 
 - Implement clustering, for example, in the case of multiple currencies, cluster by currency.
 - I implemented daily partitionning, but since we only have one record per day it's not warranted.
 
-### 1. CI/CD Pipeline
-- Add linting and code formatting checks (ruff, black)
+### 1. CI/CD
+- Implement a CI/CD pipeline with automated builds, testing, and deployment
+- Add code quality checks including linting (ex: pylint) and formatting (ex: black)
 - Automated dependency vulnerability scanning
 
-### 3. Data Quality & Monitoring
+### 2. Data Quality & Monitoring
 - Enhanced dbt tests with oackages like `dbt_expectations` for data validation
 - Data freshness monitoring and alerting
 - Add data profiling and anomaly detection using tools like `dbt_expectations`n `dbt macro` and python's `GX`
 
-### 4. Error Handling & Logging
+### 3. Error Handling & Logging
 - Structured logging with consistent format across all components, instead of just prints
 - Centralized logging, error tracking and alerting
 - Use a comprehensive performance monitoring stack
 
-### 8. Security
+### 4. Data Governance
+- Create data retention policies
+- Add data lineage documentation
+- Implement data versioning
+- Add schema evolution strategy
+
+### 5. Security
 - Dependency vulnerability scanning and patching
 - Secrets scanning and rotation
 - Role-based access controls (RBAC)

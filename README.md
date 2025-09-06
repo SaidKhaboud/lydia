@@ -52,3 +52,31 @@ I put in place some tests within the model, as well as tests to ensure the valid
 
 This task reads the data from `daily_candlestick` table and plots a candlestick graph showing the progression of the price during the last 7 days.
 
+## Improvements
+
+### Data transformation and query optimization
+- Implement intermediate models instead of using CTEs in one big query, and implement tests for each of the intermediate models.
+- Implement indexing, (using the date as an index in this case for example).
+- Implement clustering, for example, in the case of multiple currencies, cluster by currency.
+- I implemented daily partitionning, but since we only have one record per day it's not warranted.
+
+### 1. CI/CD Pipeline
+- Add linting and code formatting checks (ruff, black)
+- Automated dependency vulnerability scanning
+
+### 3. Data Quality & Monitoring
+- Enhanced dbt tests with oackages like `dbt_expectations` for data validation
+- Data freshness monitoring and alerting
+- Add data profiling and anomaly detection
+
+### 4. Error Handling & Logging
+- Structured logging with consistent format across all components, instead of just prints
+- Centralized error tracking and alerting
+- Use a comprehensive performance monitoring stack
+
+### 8. Security
+- Dependency vulnerability scanning and patching
+- Secrets scanning and rotation
+- Role-based access controls (RBAC)
+
+

@@ -8,7 +8,7 @@ install:
 	uv pip install .
 
 run:
-	docker compose up
+	docker compose up -d
 
 kill:
 	docker compose down -v

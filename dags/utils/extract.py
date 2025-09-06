@@ -1,9 +1,12 @@
 from datetime import datetime, timedelta
 import airbyte as ab
 
+
 def get_one_week_ago():
+    """Returns the date one week ago in "DD-MM-YYYY" format."""
     now = datetime.now()
     return (now - timedelta(days=7)).date().strftime("%d-%m-%Y")
+
 
 def run_extraction():
     """
@@ -25,18 +28,18 @@ def run_extraction():
         )
 
         source.check()
-        
+
         # Configure a custom local cache with specific settings
         cache = ab.new_local_cache(
             cache_name="crypto_data",  # Custom cache name
             cache_dir="/opt/airflow/db",  # Store in current directory
-            cleanup=False  # Don't auto-cleanup the cache
+            cleanup=False,  # Don't auto-cleanup the cache
         )
         source.read(cache=cache)
     except Exception as e:
         print(f"Error during extraction: {e}")
         raise
 
+
 if __name__ == "__main__":
     run_extraction()
-    

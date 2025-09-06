@@ -1,7 +1,10 @@
-import duckdb
 import sys
+import duckdb
+
 
 def verify_raw_table():
+    """Verify that the market_chart table exists and has valid data"""
+
     db_path = "/opt/airflow/db/db_crypto_data.duckdb"
     table_name = "market_chart"
     conn = duckdb.connect(db_path)
@@ -25,6 +28,7 @@ def verify_raw_table():
         sys.exit(0)
     finally:
         conn.close()
+
 
 if __name__ == "__main__":
     verify_raw_table()

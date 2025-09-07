@@ -41,7 +41,7 @@ MANIFEST
 dbt/target/
 dbt/dbt_packages/
 dbt/logs/
-dbt/.user.yml
+.user.yml
 
 # Logs
 *.log
@@ -68,11 +68,6 @@ log/
 ._*
 .Spotlight-V100
 .Trashes
-ehthumbs.db
-Thumbs.db
-
-# Prefect
-.prefect/
 
 # Airbyte
 airbyte_local/

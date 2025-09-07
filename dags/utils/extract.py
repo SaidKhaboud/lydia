@@ -31,9 +31,9 @@ def run_extraction():
 
         # Configure a custom local cache with specific settings
         cache = ab.new_local_cache(
-            cache_name="crypto_data",  # Custom cache name
-            cache_dir="/opt/airflow/db",  # Store in current directory
-            cleanup=False,  # Don't auto-cleanup the cache
+            cache_name="crypto_data",
+            cache_dir="/opt/airflow/db",
+            cleanup=False,
         )
         source.read(cache=cache)
     except Exception as e:

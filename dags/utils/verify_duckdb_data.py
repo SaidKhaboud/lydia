@@ -26,6 +26,9 @@ def verify_raw_table():
             sys.exit(1)
         print(f"Test passed: Table '{table_name}' is not empty and has a prices array with length > 1.")
         sys.exit(0)
+    except Exception as e:
+        print(f"Error during verification: {e}")
+        raise
     finally:
         conn.close()
 

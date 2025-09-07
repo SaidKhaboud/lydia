@@ -64,6 +64,7 @@ This task reads the data from `daily_candlestick` table and plots a candlestick 
 ### 1. CI/CD
 - Implement a CI/CD pipeline with automated builds, testing, and deployment
 - Add code quality checks including linting (ex: pylint) and formatting (ex: black)
+- Add unit and end to end tests
 - Automated dependency vulnerability scanning
 
 ### 2. Data Quality & Monitoring

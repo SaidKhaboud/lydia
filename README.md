@@ -59,6 +59,7 @@ This task reads the data from `daily_candlestick` table and plots a candlestick 
 - Implement indexing, (using the date as an index in this case for example).
 - Implement clustering, for example, in the case of multiple currencies, cluster by currency.
 - I implemented daily partitionning, but since we only have one record per day it's not warranted.
+- Even though DuckDB is a powerful processing engine, I would recommend using a more suitable solution to store data permanently, for example, after each process copy the raw data in object storage, the final data in a data warehouse, and only leave the last 7 days for example in DuckDb for quick access.
 
 ### 1. CI/CD
 - Implement a CI/CD pipeline with automated builds, testing, and deployment
